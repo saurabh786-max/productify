@@ -1,10 +1,11 @@
 import { relations } from "drizzle-orm";
 import { pgTable, timestamp } from "drizzle-orm/pg-core";
-import { integer, varchar, uuid, text } from "drizzle-orm/pg-core";
+import { varchar, uuid, text } from "drizzle-orm/pg-core";
+
 
 
 export const users = pgTable("users", {
-  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  id: text("id").primaryKey(),
   email: varchar("email", { length: 255 }).notNull().unique(),
   name: varchar("name", { length: 100 }).notNull(),
   imageUrl: text("image_url"),
@@ -17,7 +18,7 @@ export const products = pgTable("products", {
   title: varchar("title",{ length: 355 }).notNull(),
   description: text("description").notNull(),
   imageUrl: text("image_url").notNull(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   createdAt: timestamp("created_at", { mode: "date" }).notNull().defaultNow(),
@@ -27,7 +28,7 @@ export const products = pgTable("products", {
 export const comments = pgTable("comments", {
   id: uuid("id").defaultRandom().primaryKey(),
   content: varchar("content", { length: 1500 }).notNull(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   productsId: uuid("product_id")
