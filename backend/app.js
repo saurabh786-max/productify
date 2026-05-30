@@ -1,8 +1,8 @@
 import express from "express";
 import {clerkMiddleware} from "@clerk/express"
 import cors from "cors"
-import userRouter from "./src/routes/users.routes";
-import productRouter from "./src/routes/products.router";
+import userRouter from "./src/routes/users.routes.js";
+import productRouter from "./src/routes/products.router.js";
 
 const app = express();
  app.use(express.json({limit:"16kb"}))
