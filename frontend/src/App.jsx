@@ -9,8 +9,13 @@ import Products from './components/Products'
 import CreatePage from './components/CreatePage'
 import ProfilePage from './components/ProfilePage'
 import EditProductPage from './components/EditProductPage'
+import useAuthReq from './Hooks/useAuthReq'
+import useUserSync from './Hooks/useUserSync'
 
 const App = () => {
+  const{isSignedIn, isCleckLoaded} = useAuthReq();
+ useUserSync();
+ if(!isCleckLoaded) return null;
   return (
     <>
     <div className='min-h-screen bg-base-100'>

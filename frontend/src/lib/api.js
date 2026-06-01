@@ -1,0 +1,48 @@
+import api from "./axios";
+// user api
+export const syncUser = async (userData)=>{
+    const {data} = await api.post("/users/sync", userData);
+    return data;
+}
+
+// Products API
+
+export const getAllProducts = async()=>{
+    const {data} = await api.get("/products");
+    return data;
+};
+
+
+// get single product api 
+
+export const getProduct = async(id)=>{
+    const {data} = await api.get(`/products/${id}`);
+    return data;
+};
+
+export const createProduct = async(productData) =>{
+   const {data} = await api.post("/create",productData);
+   return data;
+}
+
+export const deleteProduct = async(id)=>{
+    const {data} = await api.delete(`/delete/${id}`);
+    return data;
+}
+
+export const updateProduct = async ({id, ...productData})=>{
+    const {data} = await api.put(`/products/${id}`);
+    return data;
+};
+
+// comment api
+
+export const createComment = async({productId, content})=>{
+    const {data} = await api.post(`/comments/${productId}`);
+    return data;
+}
+
+export const deleteComment = async ({commentId})=>{
+    const {data} = await api.post (`/comments/${commentId}`);
+    return data;
+};

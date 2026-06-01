@@ -7,7 +7,7 @@ const userRouter = Router();
 
 // userRouter.rotue("/create").post(createUser);
 // userRouter.route("/update/:id").put(updateUser);
-userRouter.route("/upsert").post(requireAuth(),syncUser);
+userRouter.route("/sync").post(requireAuth(),syncUser);
 // userRouter.route("/get-user/:id").get(getUser);
 
 
