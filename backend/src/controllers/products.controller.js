@@ -63,6 +63,13 @@ const createProduct = asyncHandler(async (req, res) => {
     imageUrl,
     userId,
   });
+  return res.status(201).json(
+    new ApiResponse(
+      201,
+      createdProduct,
+      "Product created successfully"
+    )
+  );
 });
 
 const updateProduct = asyncHandler(async (req, res) => {

@@ -21,17 +21,17 @@ export const getProduct = async(id)=>{
 };
 
 export const createProduct = async(productData) =>{
-   const {data} = await api.post("/create",productData);
+   const {data} = await api.post("/products/create-product",productData);
    return data;
 }
 
 export const deleteProduct = async(id)=>{
-    const {data} = await api.delete(`/delete/${id}`);
+    const {data} = await api.delete(`/products/delete/${id}`);
     return data;
 }
 
 export const updateProduct = async ({id, ...productData})=>{
-    const {data} = await api.put(`/products/${id}`);
+    const {data} = await api.put(`/products/update-product/${id}`);
     return data;
 };
 
