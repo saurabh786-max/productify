@@ -13,7 +13,7 @@ export const createProductQuery = async (data) => {
 };
 
 export const getAllProductsQuerry = async()=>{
-    return await  db.query.products.findMany({with:{users:true},
+    return await  db.query.products.findMany({with:{users:true, comments:true},
         orderBy: (products,{desc})=>[desc(products.createdAt)]
         // the square brackets are required because Drizzle orm's orderBy expects an array, even for a single column 
     })

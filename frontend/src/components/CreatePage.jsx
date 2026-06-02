@@ -26,7 +26,7 @@ const CreatePage = () => {
           <SparkleIcon className='size-5 text-primary'/>
           New Product
         </h1>
-        <form onSubmit={handleSubmit} className='space-y-4mt-4'>
+        <form onSubmit={handleSubmit} className='space-y-4 mt-4'>
           {/* title input  */}
           <label className='input input-bordered flex items-center gap-2 bg-base-200'>
 
@@ -51,7 +51,7 @@ const CreatePage = () => {
               <div className='rounded-box overflow-hidden'>
                 <img src={formData.imageUrl}
                 alt='preview'
-                className='w-full h-40 object-cover'
+                className='w-full h-40 object-contain'
                 onError={(e)=>(e.target.style.display = "none")}/>
               </div>
             )}

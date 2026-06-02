@@ -18,9 +18,9 @@ const Homepage = () => {
     )
   }
   return (
-    <div className='space-y-10'>
+    <div className='space-y-5'>
       {/* hero section */}
-      <div className="hero bg-linear-to-br from-base-300 via-base-200 to-base-300 rounded-box overflow-hidden">
+      <div className="hero bg-linear-to-br from-base-300 via-base-200 to-base-300 rounded-box overflow-hidden mt-5">
         <div className="hero-content flex-col lg:flex-row-reverse gap-10 py-10">
           <div className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110" />
@@ -48,7 +48,7 @@ const Homepage = () => {
       </div>
       {/* products */}
       <div>
-            <h2 className='text-xl font-bold flex items-center gap-2 mb-4'>
+            <h2 className='text-xl font-bold flex items-center gap-2 mb-5'>
               <PackageIcon className='size-5 text-primary'/>
               All products
             </h2>

@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.imageUrl}
           alt={product.title}
-          className="rounded-xl h-40 w-full object-cover"
+          className="rounded-xl h-40 w-full object-contain"
         />
       </figure>
       <div className="card-body p-4">
@@ -28,14 +28,14 @@ const ProductCard = ({ product }) => {
         <div className="divider my-1"></div>
 
         <div className="flex items-center justify-between">
-          {product.user && (
+          {product.users && (
             <div className="flex items-center gap-2">
               <div className="avatar">
                 <div className="w-6 rounded-full ring-1 ring-primary">
-                  <img src={product.user.imageUrl} alt={product.user.name} />
+                  <img src={product.users.imageUrl} alt={product.users.name} />
                 </div>
               </div>
-              <span className="text-xs text-base-content/60">{product.user.name}</span>
+              <span className="text-xs text-base-content/60">{product.users.name}</span>
             </div>
           )}
           {product.comments && (

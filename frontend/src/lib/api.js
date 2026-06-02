@@ -36,7 +36,7 @@ export const deleteProduct = async(id)=>{
 }
 
 export const updateProduct = async ({id, ...productData})=>{
-    const {data} = await api.put(`/products/update-product/${id}`);
+    const {data} = await api.put(`/products/update-product/${id}`,productData);
     return data;
 };
 
