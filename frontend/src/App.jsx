@@ -23,7 +23,7 @@ const App = () => {
       <main className='max-w-5xl mx-auto'>
       <Routes>
           <Route path='/' element={<Homepage/>}/>
-          <Route path='/product/:id' element={<Products/>}/>
+          <Route path='/product/:id' element={ <Products/> }/>
           <Route path='/create' element={isSignedIn ? <CreatePage/> : <Navigate to={"/"}/>}/>
           <Route path='/profile' element={<ProfilePage/>}/>
           <Route path='/edit/:id' element={<EditProductPage/>}/>

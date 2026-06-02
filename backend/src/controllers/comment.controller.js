@@ -10,7 +10,7 @@ const createComment = asyncHandler(async (req,res)=>{
     if(!userId){
         throw new ApiError(401,"unauthorized request");
     }
-    const {productId} =req.params;
+    const {productsId} =req.params;
     const {content} = req.body;
     if(!content){
         throw new ApiError(404, "product not found ");
@@ -18,14 +18,14 @@ const createComment = asyncHandler(async (req,res)=>{
     const comment = await createCommentQuerry({
         content,
         userId,
-        productId
+        productsId
     });
     return res.status(201).json(new ApiResponse(201,comment,"comment created successfully !!"));
 
 });
 const deleteComment = asyncHandler(async (req,res)=>{
-    const {userId} = getAuth();
-     if(!userid){
+    const {userId} = getAuth(req);
+     if(!userId){
         throw new ApiError(401,"unauthorized request");
     }
     const {commentId} = req.params;
@@ -39,7 +39,7 @@ if(existingComment.userId !== userId){
 
 const deletedComment = await deleteCommentQuerry(commentId);
 
-return res.status(200).json(new ApiResponse(200,deleteComment,"comment deleted successfully !!"))
+return res.status(200).json(new ApiResponse(200,deletedComment,"comment deleted successfully !!"))
 })
 
 export{createComment,deleteComment}

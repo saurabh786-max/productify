@@ -38,11 +38,11 @@ export const updateProduct = async ({id, ...productData})=>{
 // comment api
 
 export const createComment = async({productId, content})=>{
-    const {data} = await api.post(`/comments/${productId}`);
+    const {data} = await api.post(`/comments/create-comment/${productId}`,{content});
     return data;
 }
 
 export const deleteComment = async ({commentId})=>{
-    const {data} = await api.post (`/comments/${commentId}`);
+    const {data} = await api.delete (`/comments/delete-comment/${commentId}`);
     return data;
 };

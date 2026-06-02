@@ -3,6 +3,7 @@ import {clerkMiddleware} from "@clerk/express"
 import cors from "cors"
 import userRouter from "./src/routes/users.routes.js";
 import productRouter from "./src/routes/products.router.js";
+import commentRouter from "./src/routes/comments.router.js";
 
 const app = express();
  app.use(express.json({limit:"16kb"}))
@@ -17,6 +18,7 @@ app.use(cors({
 
 app.use("/api/users",userRouter);
 app.use("/api/products",productRouter);
+app.use("/api/comments",commentRouter);
 
 
 export default app;
