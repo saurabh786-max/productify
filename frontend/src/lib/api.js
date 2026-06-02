@@ -12,6 +12,11 @@ export const getAllProducts = async()=>{
     return data;
 };
 
+export const getMyProducts = async()=>{
+   const {data} = await api.get("/products/my-products");
+   return data;
+}
+
 
 // get single product api 
 
