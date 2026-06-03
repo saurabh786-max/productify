@@ -2,6 +2,10 @@
 
 A modern full-stack web application for managing products with user authentication, product listings, and community comments. Built with React, Express, PostgreSQL, and TypeScript-ready technologies.
 
+## 🌐 Live Deployment
+
+- **Frontend**: https://productify-ui.onrender.com
+
 ## 🎯 Features
 
 - **User Authentication**: Secure authentication powered by Clerk
