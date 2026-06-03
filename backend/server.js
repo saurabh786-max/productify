@@ -1,8 +1,12 @@
 import "dotenv/config";
 import app from "./app.js";
 
-app.listen(process.env.PORT||3000, ()=>{
-    console.log(
-        `server is listing on the port : ${process.env.PORT}`
-    )
-})
+const PORT = process.env.PORT || 3000;
+
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port: ${PORT}`);
+  });
+}
+
+export default app;
