@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router";
-import {  useDeleteProduct, useMyProducts } from "../hooks/useProducts";
+import {  useDeleteProduct, useMyProducts } from "../Hooks/useProducts";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { PlusIcon, PackageIcon, EyeIcon, EditIcon, Trash2Icon } from "lucide-react";
 
