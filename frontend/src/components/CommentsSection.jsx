@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth, SignInButton } from "@clerk/react";
-import { useCreateComment, useDeleteComment } from "../hooks/useComments";
+import { useCreateComment, useDeleteComment } from "../Hooks/useComments";
 import { SendIcon, Trash2Icon, MessageSquareIcon, LogInIcon } from "lucide-react";
 
 function CommentsSection({ productId, comments = [], currentUserId }) {
