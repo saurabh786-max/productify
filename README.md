@@ -193,7 +193,7 @@ This project is licensed under the ISC License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email me or open an issue on the GitHub repository.
+For support, email me at `saurabhshah506@gmail.com` or open an issue on the GitHub repository.
 
 ## 🔗 Useful Links
 
